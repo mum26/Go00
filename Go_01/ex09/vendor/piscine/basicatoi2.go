@@ -8,7 +8,7 @@ func StrLen(s string) int {
 	return len
 }
 
-func BasicAtoi(s string) int {
+func BasicAtoi2(s string) int {
 	runes := []rune(s)
 	len := StrLen(s)
 	num := 0
@@ -16,6 +16,9 @@ func BasicAtoi(s string) int {
 	for i < len && '0' <= runes[i] && runes[i] <= '9' {
 		num = num * 10 + int(runes[i] - '0')
 		i++
+	}
+	if i < len {
+		return 0
 	}
 	return num
 }
